@@ -1,0 +1,128 @@
+<!-- volunteer.html (Updated & More Engaging) -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Volunteer - Hope Foundation</title>
+      
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="css_file/base.css">
+
+        <link rel="stylesheet" href="css_file/home.css">
+
+        <link rel="stylesheet" href="css_file/about.css">
+      
+        <!-- Page-Specific Styles -->
+        <link rel="stylesheet" href="css_file/volunteer.css">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      
+        <!-- Font Awesome Icon Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+              integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+      </head>
+      
+<body>
+    <header class="header">
+        <div class="container navbar">
+          <a href="index.html" class="logo">
+            <img src="image/altruism.png" alt="Hope Foundation Logo" class="logo-img">
+            <span class="logo-text">Hope Foundation</span>
+          </a>
+      
+          <button class="nav-toggle" aria-label="toggle navigation">☰</button>
+      
+          <ul class="nav-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Our Work</a></li>
+            <li><a href="transparency.html">Transparency</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+          </ul>
+      
+          <a href="donate.html" class="donate-button">Donate Now</a>
+        </div>
+      </header>
+
+    <main>
+        <!-- Section 1: Page Hero -->
+        <section class="page-hero" style="background-image: url('image/volunteer/volunteer-hero.jpg');">
+            <div class="hero-content">
+                <h1>Be the Change</h1>
+                <p>Join a community of passionate individuals making a real difference.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Why Volunteer? -->
+        <section class="section">
+            <div class="container">
+                <h2>Why Volunteer With Us?</h2>
+                <div class="volunteer-perks-grid">
+                    <div class="perk-card">
+                        <div class="perk-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                        <h3>Make a Direct Impact</h3>
+                        <p>Your time and skills directly support families and communities in need.</p>
+                    </div>
+                    <div class="perk-card">
+                        <div class="perk-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Join a Community</h3>
+                        <p>Connect with like-minded people who share your passion for giving back.</p>
+                    </div>
+                    <div class="perk-card">
+                        <div class="perk-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Gain New Skills</h3>
+                        <p>Develop new abilities and gain valuable experience while helping others.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: The Sign-up Form -->
+        <section class="section section-light">
+            <div class="container">
+                <h2>Get Started</h2>
+                <p>Fill out the form below and our volunteer coordinator will be in touch.</p>
+                <div class="form-container styled-form">
+                    <form id="volunteer-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" name="interest">
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="events">Events</option>
+                                <option value="fundraising">Fundraising</option>
+                                <option value="admin">Administrative</option>
+                                <option value="field-work">Field Work (if applicable)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Why do you want to volunteer?</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us a little about your passion for our cause..."></textarea>
+                        </div>
+                        <button type="submit" class="donate-button form-button">Sign Me Up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hope Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/navigation.js"></script>
+    <script src="js/volunteer-form.js"></script>
+</body>
+</html>

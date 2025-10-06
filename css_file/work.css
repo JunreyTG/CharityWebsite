@@ -1,0 +1,18 @@
+/* --- Styling for the "Our Work" Project Grid --- */
+
+.project-grid {
+    display: grid;
+    /* This creates 3 equal-width columns on wider screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* This sets the space between the cards */
+    margin-top: 2em;
+    text-align: left;
+}
+
+/* This makes the layout responsive for mobile phones */
+@media (max-width: 768px) {
+    .project-grid {
+        /* On smaller screens, it switches to a single column */
+        grid-template-columns: 1fr;
+    }
+}

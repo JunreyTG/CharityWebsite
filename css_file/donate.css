@@ -1,0 +1,218 @@
+/* --- Variables (ensure these are defined globally in your project) --- */
+:root {
+    --primary-color: #2a6f97; /* Example: A vibrant blue */
+    --secondary-color: #343a40; /* Example: Dark charcoal */
+    --accent-color: #2a6f97; /* Example: A strong green for action */
+    --light-gray: #f8f9fa; /* Very light background */
+    --medium-gray: #e9ecef; /* Slightly darker gray for subtle elements */
+    --dark-text: #343a40;
+    --light-text: #ffffff;
+    --border-color: #dee2e6; /* Clean, subtle border */
+    --font-family-sans: 'Inter', sans-serif; /* Modern sans-serif font */
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* General Body and Typography (assuming these exist and are modern) */
+body {
+    font-family: var(--font-family-sans);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* --- Donation Form Specific Styles --- */
+
+.section {
+    padding: 80px 20px; /* More generous vertical padding */
+    background-color: var(--light-gray);
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 0.75em; /* Slightly more space */
+    font-size: 2.8em; /* A bit larger and more impactful */
+    color: var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Tighter letter spacing for modern feel */
+}
+
+.section p {
+    text-align: center;
+    font-size: 1.15em; /* Slightly larger, easier to read */
+    margin-bottom: 3em; /* More space before the form */
+    color: var(--dark-text);
+    max-width: 650px; /* Optimized width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.form-container {
+    max-width: 450px; /* More compact for focus */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin: 0 auto;
+    padding: 40px; /* Increased padding inside */
+    background-color: var(--light-text);
+    border-radius: 12px; /* Softer, more modern corners */
+    box-shadow: var(--shadow-medium); /* Clearer, single shadow */
+    text-align: left;
+    border: 1px solid var(--medium-gray); /* Subtle border for definition */
+}
+
+.form-group {
+    margin-bottom: 1.8rem; /* More vertical space between groups */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600; /* Slightly less bold, modern feel */
+    color: var(--dark-text);
+    font-size: 1em; /* Standard size */
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 14px 15px; /* More generous padding */
+    border: 1px solid var(--border-color); /* Clean border */
+    border-radius: 8px; /* Softer input corners */
+    font-size: 1.05em;
+    color: var(--dark-text);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle focus ring */
+}
+
+/* Ensure the button group also aligns and sizes consistently */
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* More flexible grid */
+    gap: 12px; /* Increased gap */
+    margin-bottom: 1.8rem; /* Space below button group */
+}
+
+.btn-toggle {
+    background-color: var(--light-text);
+    border: 1px solid var(--border-color); /* Consistent border style */
+    color: var(--dark-text);
+    padding: 15px 10px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: var(--font-family-sans);
+    border-radius: 8px; /* Consistent rounded corners */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.btn-toggle:hover {
+    border-color: var(--primary-color);
+    background-color: var(--medium-gray);
+    color: var(--primary-color);
+}
+
+.btn-toggle.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-light); /* Subtle shadow when active */
+}
+
+.btn-toggle:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--primary-color); /* Ensure border also reflects focus */
+}
+
+.donate-button.form-button {
+    margin-top: 2.5em; /* More prominent separation */
+    width: 100%;
+    padding: 16px; /* Larger, more inviting button */
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.donate-button.form-button:hover {
+    background-color: #218838; /* Slightly darker green */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.donate-button.form-button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: var(--shadow-light);
+}
+
+.form-container .secure-message { /* Added a class for specific targeting */
+    text-align: center;
+    margin-top: 2em; /* More vertical space */
+    font-size: 0.85em;
+    color: #6c757d;
+    display: flex; /* Use flex for icon alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+/* Optional: Add an icon for the secure message */
+.form-container .secure-message::before {
+    content: '🔒'; /* Lock emoji, or replace with an SVG icon */
+    font-size: 1em;
+    line-height: 1; /* Ensure proper alignment */
+    color: #6c757d;
+}
+
+@media (max-width: 600px) { /* Adjusted breakpoint */
+    .section {
+        padding: 50px 15px;
+    }
+
+    .section h2 {
+        font-size: 2.2em;
+    }
+
+    .section p {
+        font-size: 1em;
+        margin-bottom: 2em;
+    }
+
+    .form-container {
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    .btn-group {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        gap: 10px;
+    }
+
+    .donate-button.form-button {
+        padding: 14px;
+        font-size: 1em;
+    }
+}
+
+/* Very small screens: stack buttons */
+@media (max-width: 400px) {
+    .btn-group {
+        grid-template-columns: 1fr;
+    }
+}

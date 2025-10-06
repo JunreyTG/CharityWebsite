@@ -1,0 +1,40 @@
+/* Grid for the "Why Volunteer" perks */
+.volunteer-perks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 2em;
+}
+.perk-card {
+    text-align: center;
+}
+.perk-icon {
+    color: var(--accent-color);
+    font-size: 48px;
+    margin-bottom: 0.5em;
+}
+
+/* Enhanced styling for the form container */
+.styled-form {
+    background: var(--light-text);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin-top: 2em;
+}
+
+/* Minor improvements for form inputs */
+#volunteer-form input,
+#volunteer-form textarea,
+#volunteer-form select {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    transition: border-color 0.3s ease;
+}
+
+#volunteer-form input:focus,
+#volunteer-form textarea:focus,
+#volunteer-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
