@@ -1,18 +1,3 @@
-/* --- Variables (ensure these are defined globally in your project) --- */
-:root {
-    --primary-color: #2a6f97; /* Example: A vibrant blue */
-    --secondary-color: #343a40; /* Example: Dark charcoal */
-    --accent-color: #2a6f97; /* Example: A strong green for action */
-    --light-gray: #f8f9fa; /* Very light background */
-    --medium-gray: #e9ecef; /* Slightly darker gray for subtle elements */
-    --dark-text: #343a40;
-    --light-text: #ffffff;
-    --border-color: #dee2e6; /* Clean, subtle border */
-    --font-family-sans: 'Inter', sans-serif; /* Modern sans-serif font */
-    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
-    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* General Body and Typography (assuming these exist and are modern) */
 body {
     font-family: var(--font-family-sans);
@@ -136,9 +121,11 @@ body {
 }
 
 .donate-button.form-button {
-    margin-top: 2.5em; /* More prominent separation */
+    margin-top: 1em; 
     width: 100%;
-    padding: 16px; /* Larger, more inviting button */
+    display: block; 
+    margin: 1em auto;
+    padding: 16px; 
     font-size: 1.1em;
     border: none;
     cursor: pointer;
@@ -151,7 +138,7 @@ body {
 }
 
 .donate-button.form-button:hover {
-    background-color: #218838; /* Slightly darker green */
+    background-color: #013a63; /* Slightly darker green */
     transform: translateY(-3px); /* More pronounced lift */
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }

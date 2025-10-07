@@ -6,6 +6,7 @@
     --light-gray: #f8f9fa;
     --dark-text: #343a40;
     --light-text: #ffffff;
+    --font-family-sans: 'Inter', sans-serif; /* Modern sans-serif font */
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif; /* A modern, clean font for headings */
+    font-family: 'Montserrat', sans-serif; 
     color: var(--secondary-color);
     font-weight: 700;
 }
@@ -34,72 +35,194 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Global Responsive Image Rule: ADD THIS */
+img, video, embed, iframe, object {
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+}
+
 .container {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
-/* Header & Navigation */
+/* --- Refactored Header & Navigation (Mobile-First) --- */
+
+/* Header (Default for Mobile) */
 .header {
-    background: var(--light-text);
-    padding: 15px 0;
-    border-bottom: 1px solid #dee2e6;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    width: 100%; /* Ensure it spans full width */
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px; 
+    flex-wrap: nowrap; 
 }
 
 .logo {
-    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Smaller gap for mobile */
+    text-decoration: none;
+    font-size: 1.5em; /* Default font size */
     font-weight: bold;
     color: var(--primary-color);
 }
 
+.logo-img {
+    height: 45px; /* Smaller logo for mobile */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.5rem; /* Match logo text size */
+    font-weight: 700;
+    color: var(--secondary-color); /* Use variable */
+}
+
+/* Mobile Navigation Links (hidden by default, shown by JS) */
 .nav-links {
     list-style: none;
-    display: flex;
-    margin: 0;
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    background: var(--light-text); /* Use variable */
+    position: absolute; /* Position relative to the header */
+    top: 70px; /* Adjust based on your header height */
+    right: 20px; /* Align to the right, adjust padding */
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0; /* Add padding for menu items */
+    margin: 0; /* Reset margin */
+}
+
+.nav-links.active {
+    display: flex; /* Shown when 'active' class is added by JS */
 }
 
 .nav-links li {
-    margin-left: 25px;
+    text-align: center;
+    margin: 10px 0; /* Spacing for vertical list */
 }
 
 .nav-links a {
-    color: var(--secondary-color);
+    text-decoration: none;
+    color: var(--secondary-color); /* Use variable */
     font-weight: 600;
+    display: block; /* Make links fill their space for easier tapping */
+    padding: 8px 15px; /* Add padding for tap target */
 }
 
-.donate-button {
+.nav-links a:hover {
+    color: var(--primary-color); /* Use variable */
+    background-color: var(--light-gray); /* Highlight on hover */
+}
+
+.donate-button { /* General styling for donate button */
     background-color: var(--accent-color);
     color: var(--light-text);
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    display: block; /* Ensure it behaves well in both navs */
+    text-align: center; /* Center text if it's the only item */
 }
 
 .donate-button:hover {
-    background-color: #3a8a7a;
+    background-color: #3a8a7a; /* Specific hover color */
     text-decoration: none;
 }
 
+/* Mobile Nav Toggle (shown by default for mobile) */
 .nav-toggle {
-    display: none; /* Hidden on desktop */
+    display: block; /* Shown by default on mobile */
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--secondary-color);
+    margin-left: 15px; 
+    flex-shrink: 0; 
 }
+
+
+/* --- Media Queries for Larger Screens (Desktop Styles) --- */
+@media (min-width: 900px) { /* ADJUSTED BREAKPOINT: Now desktop styles start at 900px */
+
+    .navbar {
+        padding: 15px 40px; /* Restore desktop padding for larger screens */
+    }
+
+    .logo {
+        gap: 10px; /* Larger gap for desktop */
+        font-size: 1.7rem; /* Restore desktop font size */
+        color: #2c3e50; /* If you want a different color on desktop */
+    }
+
+    .logo-img {
+        height: 55px; /* Larger logo for desktop */
+    }
+
+    .logo-text {
+        font-size: 1.7rem; /* Restore desktop font size */
+        color: #2c3e50; /* Restore desktop color */
+    }
+
+    .nav-links {
+        display: flex; /* Show navigation links as a flex row */
+        flex-direction: row; /* Horizontal */
+        position: static; /* Remove absolute positioning */
+        width: auto; /* Auto width */
+        box-shadow: none; /* No shadow */
+        background: none; /* No background */
+        padding: 0; /* No padding */
+        gap: 25px; /* Add gap between links */
+        margin-left: auto; /* Push nav links to the right */
+    }
+
+    .nav-links li {
+        margin: 0; /* Remove vertical margin */
+    }
+
+    .nav-links a {
+        padding: 0; /* No padding for individual links */
+        color: #2c3e50; /* Desktop link color */
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+        background-color: transparent; /* No background on hover for desktop */
+    }
+
+    .donate-button {
+        margin-left: 25px; /* Add some space from last nav link */
+        display: inline-block; /* Make it inline */
+    }
+
+    .nav-toggle {
+        display: none; /* Hide the mobile toggle on desktop */
+    }
+    /* IMPORTANT: Re-add any specific .hero h1 or .grid-3 styles that were in your old media queries here */
+    .hero h1 {
+        font-size: 3.5em; /* Example: If you had this in your old media query */
+    }
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr); /* Example: If you had this in your old media query */
+    }
+}
+
 
 /* Footer */
 .footer {
@@ -115,34 +238,6 @@ a:hover {
     color: var(--accent-color);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: var(--light-text);
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-links li {
-        text-align: center;
-        margin: 15px 0;
-    }
-    .nav-toggle {
-        display: block;
-    }
-    .hero h1 {
-        font-size: 2.5em;
-    }
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Forms */
 .form-container {
@@ -174,101 +269,4 @@ a:hover {
     border: none;
     cursor: pointer;
 }
-/* -------------------- */
-/* Header & Navigation */
-/* -------------------- */
-.header {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  
-  .logo-img {
-    height: 55px;
-    width: auto;
-  }
-  
-  .logo-text {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #2c3e50;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: var(--primary-color, #0077cc);
-  }
-  
-  .donate-button {
-    background-color: var(--primary-color, #0077cc);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  
-  .donate-button:hover {
-    background-color: #005fa3;
-  }
-  
-  /* Mobile Responsive Menu */
-  .nav-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background: white;
-      position: absolute;
-      top: 70px;
-      right: 30px;
-      width: 200px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .nav-toggle {
-      display: block;
-    }
-  }
   
